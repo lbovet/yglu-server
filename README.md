@@ -4,13 +4,13 @@ Yglu ᕄ as a service for demo purposes.
 ## Requirements
 
 ``` 
-pip3 install yglu flask
+pip3 install yglu flask flask-cors
 ```
 
 ## Run
 
 ```
-FLASK_APP=yglu-server.py flask run
+FLASK_APP=yglu-server.py [CORS=<allowed-origins>] flask run
 ```
 
 ## API
@@ -21,20 +21,32 @@ Request:
 
 ```json
 {
-    "doc": "a: 1",                                   // (required) YAML input
-    "filename": "input.yml"                          // Filename for error reports
+    "doc": "a: !? 1 + 1",
+    "filename": "input.yml"
 }
 ```
+
+- `doc`: The YAML input. **Required**.
+- `filename`: A filename to use in the error report.
 
 Response:
 
 ```json
 {
-    "doc": "a: !? ",                                 // YAML output
-    "errors": [                                      // Processing errors
+    "doc": "a: 2"
+}
+```
+
+- `doc`: The YAML output.
+
+```json
+{
+    "errors": [
         {
             "message": "unexpected end of input..."
         }             
     ]
 }
 ```
+
+- `errors`: List of processing errors

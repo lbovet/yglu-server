@@ -1,11 +1,16 @@
 from flask import Flask, request, jsonify
+from flask_cors import cross_origin
 from yglu.main import process
 from io import StringIO
+from os import environ
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16384
 
+origins = environ['CORS'] if 'CORS' in environ else ""
+
 
 @app.route('/api/process', methods=['POST'])
+@cross_origin(origins=origins)
 def process_doc():
     input = request.json
     errors = []
