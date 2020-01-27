@@ -10,12 +10,12 @@ pip3 install yglu flask flask-cors
 ## Run
 
 ```
-FLASK_APP=yglu-server.py [CORS=<allowed-origins>] flask run
+FLASK_APP=server.py [CORS=<allowed-origins>] flask run
 ```
 
 ## API
 
-**`POST`** `/api/process`
+**`POST`** `/yglu/process`
 
 Request:
 

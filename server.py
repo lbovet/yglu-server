@@ -9,7 +9,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16384
 origins = environ['CORS'] if 'CORS' in environ else ""
 
 
-@app.route('/yglu/process', methods=['POST'])
+@app.route('/api/process', methods=['POST'])
 @cross_origin(origins=origins)
 def process_doc():
     input = request.json
