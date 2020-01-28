@@ -43,7 +43,15 @@ Response:
 {
     "errors": [
         {
-            "message": "unexpected end of input..."
+            "message": "unexpected end of input...",
+            "start": {
+                "line": 2,
+                "column": 3
+            },
+            "end": {
+                "line": 2,
+                "column": 4
+            }
         }             
     ]
 }
