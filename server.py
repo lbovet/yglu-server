@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16384
 
 origins = environ['CORS'] if 'CORS' in environ else [
-    "http://localhost:8888", "http://yglu.io"]
+    "http://localhost:8888", "https://yglu.io"]
 
 
 @app.route('/yglu/process', methods=['POST'])
